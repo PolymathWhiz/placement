@@ -24,9 +24,11 @@
 					</div>
 					<div class="card fat">
 						<div class="card-body">
-							<h4 class="card-title text-center">Login</h4>
 							<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-							 
+							
+							<h4 class="card-title text-center">Login</h4>
+
+								<%= render  "shared/alert" %>
 								<div class="form-group">
 									<label for="email">Email</label>
                   <%= f.email_field :email, autofocus: true, class: 'form-control', required: true %>
@@ -56,7 +58,7 @@
 							<% end %>
 						</div>
 					</div>
-					<div class="footer text-white">
+					<div class="footer">
 						Copyright &copy; 2018 &mdash; Maplerad 
 					</div>
 				</div>
