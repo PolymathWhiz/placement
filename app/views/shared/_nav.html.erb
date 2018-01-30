@@ -57,7 +57,7 @@
               </a>
               <div class="dropdown-menu">
                 <li>
-                  <a href="#" class="dropdown-item"> <%= fa_icon 'tachometer' %> Dashboard</a>
+                  <a href="<%= user_path(current_user) %>" class="dropdown-item"> <%= fa_icon 'tachometer' %> Dashboard</a>
                 </li>
                 <li>
                   <a href="<%= edit_user_registration_path %>" class="dropdown-item">
