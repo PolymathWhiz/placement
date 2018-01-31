@@ -25,6 +25,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 # Font Awesome
 gem "font-awesome-rails"
+# For SASS
+gem 'sass-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -97,4 +97,62 @@ module UsersHelper
         ['Volta', 10]
     ]
   end
+
+  def name(user)
+    user.name unless user.blank?
+  end
+
+  def city(user)
+    user.city unless user.blank?
+  end
+
+  def bio(user)
+    user.bio unless user.blank?
+  end
+
+  def skill(user)
+    user.skill unless user.blank?
+  end
+
+  def objective(user)
+    user.objective unless user.blank?
+  end
+
+  def university(user)
+    user.university unless user.blank?
+  end
+
+  def user_level(user)
+    user.level unless user.blank?
+  end
+
+  def major(user)
+    user.major unless user.blank?
+  end
+
+  def city(user)
+    user.city unless user.blank?
+  end
+
+  def website_url(user)
+    user.website unless user.blank?
+  end
+
+  def linkedin_url(user)
+    name = user.linkedin
+    if name =~ %r{\Ahttps?:\/\/(www\.)?linkedin\.com\/in\/}
+      name
+    else
+      "https://www.linkedin.com/in/#{name}"
+    end
+  end
+  
+  def twitter_url(user)
+    name = user.twitter
+    if name =~ %r{\Ahttps?:\/\/(www\.)?twitter\.com\/}
+      name
+    else
+      "https://www.twitter.com/#{name}" 
+    end
+  end
 end

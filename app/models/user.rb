@@ -12,4 +12,8 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false }
   validates :name, presence: true
   validates :bio, length: { maximum: 255 }, allow_blank: true
+
+  #
+  # TODO: Lowercase name and other stuffs
+  #
 end

@@ -1,3 +1,92 @@
-<div class="container">
+<!-- Card -->
+<div class="card card-image" style="background-image: url('https://res.cloudinary.com/miracle-anyanwu/image/upload/v1517351748/work_rw2m3s.jpg');">
 
+  <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+      <div style="padding: 40px;">
+      </div>
+  </div>
+</div>  
+
+
+<div class="container m-t-30">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body text-center">
+            <%= image_tag 'p.png', width: 100, height: 100, class: 'center-block rounded-circle' %>
+            <h5 class="m-t-20">
+              <%= name(@user)%>
+            </h5>
+            <p>
+              <%= city(@user) %>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row m-t-20">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Summary</h4>
+              <p class="card-text">
+                <%= bio(@user) %>
+              </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row m-t-20">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Career Objectives</h4>
+              <p class="card-text">
+                <%= objective(@user) %>
+              </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row m-t-20">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Skills</h4>
+            <p class="card-text">
+              <%= skill(@user) %>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row m-t-20">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Education</h4>
+              <h6 class="card-text">Instituition: <%= university(@user) %></h6>
+              <h6 class="card-text"> Program: <%= major(@user) %> </h6>
+              <h6 class="card-text">Level: <%= user_level(@user) %> </h6>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row m-t-20">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Social media</h4>
+              <h6 class="card-text">Twitter: <a href="<%= twitter_url(@user)%>" target="_blank"> <%= twitter_url(@user) %> </a> </h6>
+              <h6 class="card-text">Linkedin: <a href="<%= linkedin_url(@user) %>" target="_blank"> <%= linkedin_url(@user) %> </a> </h6>
+              <h6 class="card-text">Website: <a href="<%= website_url(@user) %>" target="_blank"><%= website_url(@user) %></a> </h6>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
