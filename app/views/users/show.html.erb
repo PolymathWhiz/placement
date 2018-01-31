@@ -18,7 +18,7 @@
               <%= name(@user)%>
             </h5>
             <p>
-              <%= city(@user) %>
+              <%= user_city(@user) %>
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@
             <h4 class="card-title">Education</h4>
               <h6 class="card-text">Instituition: <%= university(@user) %></h6>
               <h6 class="card-text"> Program: <%= major(@user) %> </h6>
-              <h6 class="card-text">Level: <%= user_level(@user) %> </h6>
+              <h6 class="card-text">Level: <%= level(@user) %> </h6>
           </div>
         </div>
       </div>

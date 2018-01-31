@@ -74,7 +74,7 @@ module UsersHelper
     ]
   end
 
-  def level
+  def levels
     [
         ['100L', 1],
         ['200L', 2],
@@ -83,7 +83,7 @@ module UsersHelper
     ]
   end
 
-  def region
+  def regions
     [
         ['Ashanti', 1],
         ['Brong-Ahafo', 2],
@@ -102,8 +102,26 @@ module UsersHelper
     user.name unless user.blank?
   end
 
-  def city(user)
-    user.city unless user.blank?
+  def user_city(user)
+    selected = user.city
+    selected = selected.to_i
+
+    if selected <= regions.length && selected > 0
+      "#{regions[selected.to_i - 1][0]}, Ghana."
+    else
+      return
+    end
+  end
+
+  def level(user)
+    selected = user.level
+    selected = selected.to_i
+
+    if selected <= levels.length && selected > 0
+      levels[selected.to_i - 1][0]
+    else
+      return
+    end
   end
 
   def bio(user)
@@ -119,19 +137,18 @@ module UsersHelper
   end
 
   def university(user)
-    user.university unless user.blank?
-  end
+    selected = user.university
+    selected = selected.to_i
 
-  def user_level(user)
-    user.level unless user.blank?
+    if selected <= universities.length && selected > 0
+      universities[selected.to_i - 1][0]
+    else
+      return
+    end
   end
 
   def major(user)
     user.major unless user.blank?
-  end
-
-  def city(user)
-    user.city unless user.blank?
   end
 
   def website_url(user)
