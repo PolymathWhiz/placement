@@ -21,9 +21,14 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :bio, :objective, :level, :university, :major, :skill, :city, :facebook, :twitter, :linkedin, :phone, :gender])
+    if current_user
+      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :bio, :objective, :level, :university, :major, :skill, :city, :facebook, :twitter, :linkedin, :phone, :gender])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
+    else
+      devise_parameter_sanitizer.permit(:account_update, keys: [])
 
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:company_name, :username, :phone_number])
+    end
   end
 
   def render_404

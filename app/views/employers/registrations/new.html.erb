@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Maplerad">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Placement - Sign up</title>
+  <%= stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body class="my-login-page">
+
+<style>
+  body {
+    background-color: #021e3d !important;
+  }
+</style>
+
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+            <%= image_tag 'logo.jpg' %>
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title text-center">Register Company</h4>
+							<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+							 
+               <%= render 'shared/error_message', object: f.object %>
+
+                <div class="form-group">
+                  <label for="name">Company Name</label>
+                  <input id="name" type="text" class="form-control" name="employer[name]" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Username</label>
+                  <input id="username" type="text" class="form-control" name="employer[username]" required>
+                </div>
+
+								<div class="form-group">
+									<label for="email">Email</label>
+									<input id="email" type="email" class="form-control" name="employer[email]" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="phone_number">Phone Number</label>
+                  <input name="employer[phone_number]" type="text" class="form-control" required>
+                </div>
+
+								<div class="form-group">
+									<label for="password">Password
+                    <% if @minimum_password_length %>
+                    <small>(<%= @minimum_password_length %> characters minimum)</small>
+                  <% end %>
+                  </label>
+									<input id="password" type="password" class="form-control" name="employer[password]" required data-eye>
+								</div>
+
+								<div class="form-group no-margin">
+                  <%= f.submit "Sign up", class: 'btn btn-primary btn-block' %>
+								</div>
+                
+                <small class="text-muted">
+                  By clicking on "Sign up" you agree to Placement's Terms of Service and Privacy Policy
+                </small>
+								
+                <div class="margin-top20 text-center">
+									Already have an account? <%= link_to "Login", new_session_path(resource_name) %>
+								</div>
+							<% end %>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2018 &mdash; Maplerad 
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  
+  <%= javascript_include_tag 'devise', 'data-turbolinks-track': 'reload' %>
+</body>
+</html>

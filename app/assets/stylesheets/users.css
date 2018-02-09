@@ -1,3 +1,7 @@
 .card {
   margin: 0 auto !important;
 }
+
+.danger {
+  color: #b71c1c;
+}
