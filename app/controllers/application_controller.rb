@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     if current_user
       devise_parameter_sanitizer.permit(:account_update, keys: [:name, :bio, :objective, :level, :university, :major, :skill, :city, :facebook, :twitter, :linkedin, :phone, :gender])
       devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
-    else
+    elsif current_employer
       devise_parameter_sanitizer.permit(:account_update, keys: [])
 
       devise_parameter_sanitizer.permit(:sign_up, keys: [:company_name, :username, :phone_number])
