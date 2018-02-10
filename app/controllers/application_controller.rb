@@ -3,13 +3,13 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :configure_permitted_parameters, if: :devise_controller?
 
 
   def not_found
     render_404
   end
-
+  
   protected
 
   def layout_by_resource
@@ -20,16 +20,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def configure_permitted_parameters
-    if current_user
-      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :bio, :objective, :level, :university, :major, :skill, :city, :facebook, :twitter, :linkedin, :phone, :gender])
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
-    elsif current_employer
-      devise_parameter_sanitizer.permit(:account_update, keys: [])
+  # def configure_permitted_parameters
+  #   if current_user
+  #     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :bio, :objective, :level, :university, :major, :skill, :city, :facebook, :twitter, :linkedin, :phone, :gender])
+  #     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
+  #   else
+  #     devise_parameter_sanitizer.permit(:account_update, keys: [])
 
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:company_name, :username, :phone_number])
-    end
-  end
+  #     devise_parameter_sanitizer.permit(:sign_up, keys: [:company_name, :username, :phone_number])
+  #   end
+  # end
 
   def render_404
     respond_to do |format|
@@ -37,8 +37,10 @@ class ApplicationController < ActionController::Base
         render file: Rails.root.join("public", "404"), layout: false, status: "404"
       end
       # Prevent the Rails CSRF protector from thinking a missing .js file is a JavaScript file
-      format.js { render json: '', status: :not_found, content_type: 'application/json' }
+      format.js { 
+        render json: '', status: :not_found, content_type: 'application/json' }
       format.any { head :not_found }
     end
   end
+
 end
