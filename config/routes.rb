@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   devise_scope :employers do
     resources :employers, only: [:show]
   end
+
+  authenticated :employer do
+    root to: 'employers#show'
+  end
 end
