@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   devise_scope :users do
     resources :users, only: [:show]
   end
+
+  devise_scope :employers do
+    resources :employers, only: [:show]
+  end
 end

@@ -1,4 +1,6 @@
 class Users::SessionsController < Devise::SessionsController
+  layout 'devise'
+  
   before_action :non_user
   # before_action :configure_sign_in_params, only: [:create]
 

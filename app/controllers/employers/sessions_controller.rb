@@ -1,4 +1,6 @@
 class Employers::SessionsController < Devise::SessionsController
+  layout 'devise'
+  
   before_action :non_employer
   # before_action :configure_sign_in_params, only: [:create]
 
