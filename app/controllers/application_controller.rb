@@ -1,21 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  # layout :layout_by_resource
-
   def not_found
     render_404
   end
-  
-  protected
 
-  # def layout_by_resource
-  #   if devise_controller? && action_name == "new"
-  #     "devise"
-  #   else
-  #     "application"
-  #   end
-  # end
+  protected
 
   def render_404
     respond_to do |format|
