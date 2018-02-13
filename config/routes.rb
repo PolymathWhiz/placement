@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   authenticated :employer do
     root to: 'employers#show'
   end
+
+  resources :posts
 end

@@ -17,3 +17,4 @@ class EmployersController < ApplicationController
     redirect_to root_path if !current_employer
   end
 end
+ 
