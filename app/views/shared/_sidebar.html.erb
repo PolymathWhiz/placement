@@ -1,0 +1,54 @@
+<div class="sidebar">
+  <div class="logo">
+    <a href="<%= employer_path(current_employer) %>" class="simple-text text-white">
+      <%= employer_name(@employer) %>
+    </a>
+  </div>
+
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li class="active">
+        <a href="<%= employer_path(current_employer) %>">
+          <i class="material-icons">dashboard</i>
+          <p>Dashboard</p>
+        </a>
+      </li>
+      <li>
+        <a href="<%= edit_employer_registration_path %>">
+          <i class="material-icons">person</i>
+          <p>View Company Profile</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="material-icons">content_paste</i>
+          <p>Post an Opening</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="material-icons">library_books</i>
+          <p>Manage Openings</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="material-icons">bubble_chart</i>
+          <p>Manage Applications</p>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="material-icons text-gray">notifications</i>
+          <p>Notifications</p>
+        </a>
+      </li>
+      <li class="active-pro">
+        <a href="<%= destroy_employer_session_path %>" data-method="delete" rel="nofollow">
+          <i class="material-icons">unarchive</i>
+          <p>Sign out</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
