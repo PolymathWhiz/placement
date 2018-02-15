@@ -121,7 +121,7 @@
         <div class="row">
           <div class="col-md-8">
             <div class="card">
-              <div class="card-header" data-background-color="purple">
+              <div class="card-header">
                 <h4 class="title">Edit Profile</h4>
                 <p class="category">Complete your profile</p>
               </div>
@@ -142,7 +142,7 @@
                     </div>
                     <div class="col-md-4">
                       <div class="form-group label-floating">
-                        <label class="control-label">Email address</label>
+                        <label class="control-label">Email</label>
                         <%= f.email_field :email, class: 'form-control' %>
                       </div>
                     </div>
@@ -151,7 +151,7 @@
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group label-floating">
-                        <label class="control-label">Adress</label>
+                        <label class="control-label">Address</label>
                         <%= f.text_area :address, class: 'form-control' %>
                       </div>
                     </div>
@@ -161,19 +161,37 @@
                     <div class="col-md-4">
                       <div class="form-group label-floating">
                         <label class="control-label">City</label>
-                        <%= f.text_field :city, class: 'form-control' %>
+                        <%= f.select :city, options_for_select(regions, selected: @employer.city),{include_blank: true},{class: 'form-control'} %>
                       </div>
                     </div>
+
                     <div class="col-md-4">
                       <div class="form-group label-floating">
-                        <label class="control-label">Country</label>
-                        <input type="text" class="form-control">
+                        <label for="phone_number" class="control-label">Phone Number</label>
+                        <%= f.phone_field :phone_number, class: 'form-control'%>
                       </div>
                     </div>
+
                     <div class="col-md-4">
                       <div class="form-group label-floating">
-                        <label class="control-label">Postal Code</label>
-                        <input type="text" class="form-control">
+                        <label class="control-label">Industry</label>
+                        <%= f.select :industry, options_for_select(industries, selected: @employer.industry),{include_blank: true},{class: 'form-control'} %>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group label-floating">
+                        <label class="control-label">Website</label>
+                        <%= f.url_field :website, class: 'form-control' %>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group label-floating">
+                        <label for="phone_number" class="control-label">Twitter</label>
+                        <%= f.text_field :twitter, class: 'form-control'%>
                       </div>
                     </div>
                   </div>
@@ -207,8 +225,7 @@
                   <%= employer_name(@employer)%>
                 </h4>
                 <p class="card-content">
-                  Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye
-                  I love Rick Owens’ bed design but the back is...
+                  <%= about_employer(@employer) %>
                 </p>
               </div>
             </div>

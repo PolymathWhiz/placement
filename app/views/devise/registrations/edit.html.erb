@@ -8,8 +8,10 @@
   <div class="row m-t-50">
     <div class="col-4">
       <div class="list-group" id="list-tab" role="tablist">
-        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Personal Information</a>
-        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Security</a>
+        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab"
+          aria-controls="home">Personal Information</a>
+        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab"
+          aria-controls="profile">Security</a>
       </div>
     </div>
     <div class="col-8">
@@ -25,116 +27,127 @@
 
                 <%= render 'shared/error_message', object: f.object %>
 
-                <div class="form-group">
-                  <%= f.label :email %>
-                  <%= f.email_field :email, class: 'form-control' %>
-                </div>
-
-                <div class="form-group">
-                    <%= f.label :username %>
-                    <%= f.text_field :username, class: 'form-control', disabled: true %>
+                  <div class="form-group">
+                    <%= f.label :email %>
+                      <%= f.email_field :email, class: 'form-control' %>
                   </div>
 
-                <div class="form-group">
-                  <%= f.label :name %>
-                  <%= f.text_field :name, class: 'form-control' %>
-                </div>
+                  <div class="form-group">
+                    <%= f.label :username %>
+                      <%= f.text_field :username, class: 'form-control', disabled: true %>
+                  </div>
 
-                <div class="form-group">
-                  <%= f.label :city %>
-                  <%= f.select :city, options_for_select(regions, selected: @user.city),{include_blank: true},{class: 'form-control'} %>
-                </div>
+                  <div class="form-group">
+                    <%= f.label :name %>
+                      <%= f.text_field :name, class: 'form-control' %>
+                  </div>
 
-                <div class="dropdown-divider"></div>
+                  <div class="form-group">
+                    <%= f.label :city %>
+                      <%= f.select :city, options_for_select(regions, selected: @user.city),{include_blank: true},{class: 'form-control'} %>
+                  </div>
 
-                <div class="form-group">
-                  <%= f.label :profile_summary %>
-                  <%= f.text_area :bio, class: 'form-control' %>
-                </div>
+                  <div class="dropdown-divider"></div>
 
-                <div class="form-group">
-                  <%= f.label :career_objectives %>
-                  <%= f.text_area :objective, class: 'form-control' %>
-                </div>
+                  <div class="form-group">
+                    <%= f.label :profile_summary %>
+                      <%= f.text_area :bio, class: 'form-control' %>
+                  </div>
 
-                <div class="form-group">
-                  <label for="skills">Skills <small class="danger">*comma after each skill added</small></label>
-                  <%= f.text_field :skill, class: 'form-control' %>
-                </div>
+                  <div class="form-group">
+                    <%= f.label :career_objectives %>
+                      <%= f.text_area :objective, class: 'form-control' %>
+                  </div>
 
-                <div class="dropdown-divider"></div>
+                  <div class="form-group">
+                    <label for="skills">Skills
+                      <small class="danger">*comma after each skill added</small>
+                    </label>
+                    <%= f.text_field :skill, class: 'form-control' %>
+                  </div>
 
-                <div class="form-group">
-                  <label for="univeristy">University</label>
-                  <%= f.select :university, options_for_select(universities, selected: @user.university), {include_blank: true}, {class: 'form-control'} %>
-                </div>
+                  <div class="dropdown-divider"></div>
 
-                <div class="form-group">
-                  <label for="level">Level</label>
-                  <%= f.select :level, options_for_select(levels, selected: @user.level) ,{include_blank: true}, {class: 'form-control'} %>
-                </div>
+                  <div class="form-group">
+                    <label for="univeristy">University</label>
+                    <%= f.select :university, options_for_select(universities, selected: @user.university), {include_blank: true}, {class: 'form-control'} %>
+                  </div>
 
-                <div class="form-group">
-                  <label for="major">Program</label>
-                  <%= f.text_field :major, class: 'form-control' %>
-                </div>
+                  <div class="form-group">
+                    <label for="level">Level</label>
+                    <%= f.select :level, options_for_select(levels, selected: @user.level) ,{include_blank: true}, {class: 'form-control'} %>
+                  </div>
 
-                <div class="dropdown-divider"></div>
+                  <div class="form-group">
+                    <label for="major">Program</label>
+                    <%= f.text_field :major, class: 'form-control' %>
+                  </div>
 
-                <h4 class="head">Social Media Links</h4>
+                  <div class="dropdown-divider"></div>
 
-                <div class="form-group">
-                  <label for="linkedin">Linkedin <%= fa_icon 'linkedin', class: 'color-blue'%> </label>
-                  <%= f.text_field :linkedin, class: 'form-control', placeholder: 'Only your username' %>
-                </div>
+                  <h4 class="head">Social Media Links</h4>
 
-                <div class="form-group">
-                  <label for="website">Website <%= fa_icon 'link', class: 'color-blue'%>  </label>
-                  <%= f.url_field :website, class: 'form-control', placeholder: 'Website full link' %>
-                </div>
+                  <div class="form-group">
+                    <label for="linkedin">Linkedin
+                      <%= fa_icon 'linkedin', class: 'color-blue'%>
+                    </label>
+                    <%= f.text_field :linkedin, class: 'form-control', placeholder: 'Only your username' %>
+                  </div>
 
-                <div class="form-group">
-                  <label for="twitter">Twitter <%= fa_icon 'twitter', class: 'color-blue'%>  </label>
-                  <%= f.text_field :twitter, class: 'form-control', placeholder: 'Only your username' %>
-                </div>
+                  <div class="form-group">
+                    <label for="website">Website
+                      <%= fa_icon 'link', class: 'color-blue'%>
+                    </label>
+                    <%= f.url_field :website, class: 'form-control', placeholder: 'Website full link' %>
+                  </div>
 
-                <h4 class="head">Change Password</h4>
+                  <div class="form-group">
+                    <label for="twitter">Twitter
+                      <%= fa_icon 'twitter', class: 'color-blue'%>
+                    </label>
+                    <%= f.text_field :twitter, class: 'form-control', placeholder: 'Only your username' %>
+                  </div>
 
-                <div class="form-group">
-                  <%= f.label :password %> <small>(leave blank if you don't want to change it)</small>
-                  <%= f.password_field :password, class: 'form-control' %>
-                  <% if @minimum_password_length %>
-                    <small><%= @minimum_password_length %> characters minimum</small>
+                  <h4 class="head">Change Password</h4>
+
+                  <div class="form-group">
+                    <%= f.label :password %>
+                      <small>(leave blank if you don't want to change it)</small>
+                      <%= f.password_field :password, class: 'form-control' %>
+                        <% if @minimum_password_length %>
+                          <small>
+                            <%= @minimum_password_length %> characters minimum</small>
+                          <% end %>
+                  </div>
+
+                  <div class="form-group">
+                    <%= f.label :password_confirmation %>
+                      <%= f.password_field :password_confirmation, class:'form-control' %>
+                  </div>
+
+
+                  <div class="form-group">
+                    <%= f.label :current_password %>
+                      <small>(we need your current password to confirm your changes)</small>
+                      <%= f.password_field :current_password, class:'form-control', required: true %>
+                  </div>
+
+                  <div class="form-group">
+                    <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+
+                      <a href="<%= user_path(current_user) %>" class="btn btn-success">Cancel</a>
+                  </div>
                   <% end %>
-                </div>
-
-                <div class="form-group">
-                  <%= f.label :password_confirmation %>
-                  <%= f.password_field :password_confirmation, class:'form-control' %>
-                </div>
-
-
-                <div class="form-group">
-                  <%= f.label :current_password %>
-                  <small>(we need your current password to confirm your changes)</small>
-                  <%= f.password_field :current_password, class:'form-control', required: true %>
-                </div>
-
-                <div class="form-group">
-                  <%= f.submit "Update Profile", class: 'btn btn-primary' %>
-                  <a href="<%= user_path(current_user) %>" class="btn btn-success">Cancel</a>
-                </div>
-              <% end %>
 
             </div>
           </div>
 
         </div>
         <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-            <p>IP stuff comes in here</p>
+          <p>IP stuff comes in here</p>
         </div>
       </div>
     </div>
-    </div>
   </div>
+</div>
 </div>
