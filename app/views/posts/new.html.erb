@@ -10,11 +10,41 @@
                   <div class="card-header">
                     <h4 class="title">Post a position</h4>
                   </div>
-                  <% form_for%>
+                  <%= form_for :post do |f|%>
                     <div class="card-content">
-                      <div class="form-group">
-                        <label for=""></label>
-                        <%= text_field_tag (:title), class: 'form-control' %>
+                      <div class="form-group label-floating is-empty">
+                        <label class="control-label">Title</label>
+                        <%= f.text_field :title, class: 'form-control' %>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="form-group label-floating is-empty">
+                        <label class="control-label">Title</label>
+                        <%= f.text_field :description, class: 'form-control' %>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="form-group label-floating is-empty">
+                        <label class="control-label">Title</label>
+                        <%= f.text_field :position_type, class: 'form-control' %>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="form-group label-floating is-empty">
+                        <label class="control-label">Title</label>
+                        <%= f.text_field :requirement, class: 'form-control' %>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="form-group label-floating is-empty">
+                        <label class="control-label">Title</label>
+                        <%= f.text_field :responsibilities, class: 'form-control' %>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="form-group label-floating is-empty">
+                        <label class="control-label">Title</label>
+                        <%= f.text_field :title, class: 'form-control' %>
                       </div>
                     </div>
                     <% end %>

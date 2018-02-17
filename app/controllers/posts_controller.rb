@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   layout 'employer'
-  
-  def new; end
+
+  def new 
+    @post = Post.new
+  end
 
   def create; end
 
