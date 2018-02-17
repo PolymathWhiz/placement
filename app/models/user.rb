@@ -16,4 +16,10 @@ class User < ApplicationRecord
   #
   # TODO: Lowercase name and other stuffs
   #
+
+  def normalize_fields
+    self.email = enail.downcase
+    self.name = name.capitalize if name.present?
+    self.bio = bio.upcase
+  end
 end

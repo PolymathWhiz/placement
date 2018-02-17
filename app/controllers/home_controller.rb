@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
-  before_action :prevent_index_access, only: [:index] 
-  
-  def index
-  end
+  before_action :prevent_index_access, only: [:index]
+
+  def index; end
 
   private
 
@@ -10,4 +9,3 @@ class HomeController < ApplicationController
     redirect_to employer_path(current_employer) if current_employer
   end
 end
- 
