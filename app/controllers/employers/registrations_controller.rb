@@ -1,6 +1,6 @@
 class Employers::RegistrationsController < Devise::RegistrationsController
-  layout 'devise', only: [:new]
-  layout 'employer'
+  # layout 'devise', only: [:new, :create]
+  layout 'employer', except: [:new, :create]
   
   before_action :non_employer
   before_action :configure_sign_up_params, only: [:create]
