@@ -15,40 +15,54 @@
                     <div class="card-content">
                       <div class="form-group label-floating is-empty">
                         <label class="control-label">Title</label>
-                        <%= f.text_field :title, class: 'form-control' %>
+                        <%= f.text_field :title, class: 'form-control', required: true %>
                       </div>
                     </div>
                     <div class="card-content">
                       <div class="form-group label-floating is-empty">
                         <label class="control-label">Description</label>
-                        <%= f.text_area :description, class: 'form-control' %>
+                        <%= f.text_area :description, class: 'form-control', required: true %>
                       </div>
                     </div>
                     <div class="card-content">
                       <div class="form-group label-floating">
                         <label class="control-label">Role</label>
-                        <%= f.select :role, options_for_select(roles),{include_blank: true},{class: 'form-control'} %>
+                        <%= f.select :role, options_for_select(roles),{include_blank: true},{class: 'form-control', required: true} %>
                       </div>
                     </div>
                     <div class="card-content">
                       <div class="form-group label-floating is-empty">
                         <label class="control-label">Requirement (Each on a new line)</label>
-                        <%= f.text_area :requirement, class: 'form-control' %>
+                        <%= f.text_area :requirement, class: 'form-control', required: true %>
                       </div>
                     </div>
                     <div class="card-content">
                       <div class="form-group label-floating is-empty">
                         <label class="control-label">Title</label>
-                        <%= f.text_field :responsibilities, class: 'form-control' %>
+                        <%= f.text_field :responsibilities, class: 'form-control', required: true %>
                       </div>
                     </div>
                     <div class="card-content">
                       <div class="form-group label-floating is-empty">
-                        <label class="control-label">Title</label>
-                        <%= f.text_field :title, class: 'form-control' %>
+                        <label class="control-label">Candidate Description</label>
+                        <%= f.text_field :candidate_description, class: 'form-control', required: true %>
                       </div>
                     </div>
-                    <% end %>
+                    <div class="card-content">
+                      <div class="form-group label-floating is-empty">
+                        <label class="control-label">Candidate Qualification</label>
+                        <%= f.text_field :candidate_qualification, class: 'form-control', required: true %>
+                      </div>
+                    </div>
+                    <div class="card-content">
+                      <div class="form-group label-floating">
+                        <label class="control-label">Number of Candidates Needed</label>
+                        <%= f.number_field :candidates_needed, class: 'form-control', min: 1, step: 1, required: true%>
+                      </div>
+                    </div>
+
+                    <%= f.submit class: 'btn btn-primary btn-block'%>
+                      <% end %>
                 </div>
               </div>
             </div>
