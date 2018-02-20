@@ -1,11 +1,8 @@
 module PostsHelper
 
-  def is_date_valid?(date)
-    todays_date = Date.today
-    if todays_date > date
-      true
-    else
-      false
-    end
-  end
+  # def date_valid?(date)
+  #   today_date = Date.today
+  #
+  #   today_date > date
+  # end
 end
