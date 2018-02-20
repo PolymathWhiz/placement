@@ -15,6 +15,14 @@ module EmployersHelper
     ]
   end
 
+  def position_role
+      [
+          ['Internship', 1],
+          ['Full-time', 2],
+          ['Part-time', 3]
+    ]
+  end
+
   def employer_name(name)
     name.company_name  
   end

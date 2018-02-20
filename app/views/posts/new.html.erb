@@ -5,66 +5,78 @@
         <div class="content">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-3"></div>
-              <div class="col-md-6">
-                <div class="card">
-                  <div class="card-header">
-                    <h4 class="title">Post a position</h4>
-                  </div>
-                  <%= form_for @post do |f|%>
-                    <div class="card-content">
-                      <div class="form-group label-floating is-empty">
-                        <label class="control-label">Title</label>
-                        <%= f.text_field :title, class: 'form-control', required: true %>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="form-group label-floating is-empty">
-                        <label class="control-label">Description</label>
-                        <%= f.text_area :description, class: 'form-control', required: true %>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="form-group label-floating">
-                        <label class="control-label">Role</label>
-                        <%= f.select :role, options_for_select(roles),{include_blank: true},{class: 'form-control', required: true} %>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="form-group label-floating is-empty">
-                        <label class="control-label">Requirement (Each on a new line)</label>
-                        <%= f.text_area :requirement, class: 'form-control', required: true %>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="form-group label-floating is-empty">
-                        <label class="control-label">Title</label>
-                        <%= f.text_field :responsibilities, class: 'form-control', required: true %>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="form-group label-floating is-empty">
-                        <label class="control-label">Candidate Description</label>
-                        <%= f.text_field :candidate_description, class: 'form-control', required: true %>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="form-group label-floating is-empty">
-                        <label class="control-label">Candidate Qualification</label>
-                        <%= f.text_field :candidate_qualification, class: 'form-control', required: true %>
-                      </div>
-                    </div>
-                    <div class="card-content">
-                      <div class="form-group label-floating">
-                        <label class="control-label">Number of Candidates Needed</label>
-                        <%= f.number_field :candidates_needed, class: 'form-control', min: 1, step: 1, required: true%>
-                      </div>
-                    </div>
+              <%= form_for @post do |f|%>
+                <%= render  "shared/alert" %>
+                  <%= render  "shared/devise_flash" %>
+                    <%= render  "shared/error_message", object: f.object %>
+                      <div class="col-md-3"></div>
+                      <div class="col-md-6">
+                        <div class="card">
+                          <div class="card-header">
+                            <h4 class="title">Post a position</h4>
+                          </div>
 
-                    <%= f.submit class: 'btn btn-primary btn-block'%>
+                          <div class="card-content">
+                            <div class="form-group label-floating is-empty">
+                              <label class="control-label">Job Position Title</label>
+                              <%= f.text_field :title, class: 'form-control', required: true %>
+                            </div>
+                          </div>
+                          <div class="card-content">
+                            <div class="form-group label-floating is-empty">
+                              <label class="control-label">Job Description</label>
+                              <%= f.text_area :description, class: 'form-control', required: true %>
+                            </div>
+                          </div>
+                          <div class="card-content">
+                            <div class="form-group label-floating">
+                              <label class="control-label">Job Position</label>
+                              <%= f.select :role, options_for_select(position_role),{include_blank: true},{class: 'form-control', required: true} %>
+                            </div>
+                          </div>
+                          <div class="card-content">
+                            <div class="form-group label-floating is-empty">
+                              <label class="control-label">Job Requirement</label>
+                              <%= f.text_area :requirement, class: 'form-control', required: true %>
+                            </div>
+                          </div>
+                          <div class="card-content">
+                            <div class="form-group label-floating is-empty">
+                              <label class="control-label">Job Responsibility (Each on a new line)</label>
+                              <%= f.text_field :responsibilities, class: 'form-control', required: true %>
+                            </div>
+                          </div>
+                          <div class="card-content">
+                            <div class="form-group label-floating is-empty">
+                              <label class="control-label">Candidate Description</label>
+                              <%= f.text_area :candidate_description, class: 'form-control', required: true %>
+                            </div>
+                          </div>
+                          <div class="card-content">
+                            <div class="form-group label-floating is-empty">
+                              <label class="control-label">Candidate Qualification</label>
+                              <%= f.text_field :candidate_qualification, class: 'form-control', required: true %>
+                            </div>
+                          </div>
+                          <div class="card-content">
+                            <div class="form-group label-floating">
+                              <label class="control-label">Number of Candidates Needed</label>
+                              <%= f.number_field :candidates_needed, class: 'form-control', min: 1, step: 1, required: true %>
+                            </div>
+                          </div>
+
+                          <div class="card-content">
+                            <div class="form-group label-floteating">
+                              <label class="control-label">Application end date</label>
+                              <%= f.date_field :application_ends, class: 'form-control', required: true %>
+                            </div>
+                          </div>
+
+                          <%= f.submit class: 'btn btn-primary btn-block'%>
+
+                        </div>
+                      </div>
                       <% end %>
-                </div>
-              </div>
             </div>
           </div>
         </div>
