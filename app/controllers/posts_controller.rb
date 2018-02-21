@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
+  before_action :authenticate_employer!
+  before_action :set_post, only: [:destroy, :edit]
+
   layout 'employer'
 
-  before_action :set_post, only: [:destroy]
-
-  # include PostsHelper
+  def index
+    @posts = Post.where(employer_id: current_employer.id)
+    @post_count = @posts.count
+  end
 
   def new
     @post = Post.new
@@ -11,7 +15,6 @@ class PostsController < ApplicationController
 
   def create
     @post = current_employer.posts.build(post_params)
-    post_date = @post.application_ends
     if @post.save
       flash[:success] = 'Post successfully posted'
       redirect_to employer_path(current_employer)
@@ -20,11 +23,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit; end
+
   def update; end
 
   def destroy
     @post.destroy
     flash[:success] = 'Post was successfully deleted'
+    redirect_to employer_path(current_employer)
   end
 
   private

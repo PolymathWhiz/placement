@@ -54,3 +54,7 @@ li.active>a>p {
 .open>.navbar .navbar-nav>li>a.btn.btn-primary.dropdown-toggle:hover {
   background-color: #061338;
 }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
