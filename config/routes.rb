@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   devise_scope :employers do
     resources :employers, only: [:show]
+    get '/employer/security', to: 'employers#security'
   end
 
   authenticated :employer do
@@ -24,4 +25,5 @@ Rails.application.routes.draw do
   end
 
   resources :posts
+
 end

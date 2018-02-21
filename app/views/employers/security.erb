@@ -1,0 +1,57 @@
+<div class="wrapper">
+
+  <%= render  "shared/sidebar" %>
+
+  <div class="main-panel">
+    <%= render  "shared/employer_nav" %>
+
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-profile">
+              <div class="content">
+                <h5 class="card-content" style="font-weight: bold; font-size: 30px; color: #195bad; margin-left: -10px;">
+                  <%= @login_ip %>
+                </h5>
+                <p style="font-weight: bold; margin-top: -10px;">Current Login IP</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-profile">
+              <div class="content">
+                <h5 class="card-content" style="font-weight: bold; font-size: 30px; color: #195bad; margin-left: -10px;">
+                  <%= @last_login_ip %>
+                </h5>
+                <p style="font-weight: bold; margin-top: -10px;">Last Login IP</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-profile">
+              <div class="content">
+                <h5 class="card-content" style="font-weight: bold; font-size: 30px; color: #195bad; margin-left: -10px;">
+                  <%= @sign_in_count %>
+                </h5>
+                <p style="font-weight: bold; margin-top: -10px;">Sign In Count </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-profile">
+              <div class="content">
+                <h5 class="card-content" style="font-weight: bold; font-size: 30px; color: #195bad; margin-left: -10px;">
+                  <%= @member_since %>
+                </h5>
+                <p style="font-weight: bold; margin-top: -10px;">Member Since </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%= render  "shared/employer_footer" %>
+  </div>
+</div>
