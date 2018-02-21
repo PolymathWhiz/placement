@@ -4,14 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
   #
   # Validations
   #
   validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }, presence: true,
-            uniqueness: { case_sensitive: false }
+                       uniqueness: { case_sensitive: false }
   validates :name, presence: true
-  validates :bio, length: { maximum: 255 }, allow_blank: true
+  validates :bio, length: { maximum: 140 }, allow_blank: true
 
   #
   # TODO: Lowercase name and other stuffs
