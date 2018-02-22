@@ -21,37 +21,35 @@
                   <th>Action</th>
                   </thead>
                   <tbody>
-                  <% @posts.each_with_index do |post, index|%>
+                  <% @posts.each_with_index do |post, index| %>
                     <% index += 1 %>
-                      <tr>
-                        <td> <%= index %></td>
-                        <td><%= post.title %></td>
-                        <td><%= selected_role(post.position_type) %></td>
-                        <td><%= format_date(post.created_at) %></td>
-                        <td><%= format_date(post.application_ends) %></td>
-                        <td>
-                          <button class="btn btn-success btn-sm">
-                            <i class="material-icons">edit</i>
-                          </button>
+                    <tr>
+                      <td> <%= index %></td>
+                      <td><%= post.title %></td>
+                      <td><%= selected_role(post.position_type) %></td>
+                      <td><%= format_date(post.created_at) %></td>
+                      <td><%= format_date(post.application_ends) %></td>
+                      <td>
+                        <button class="btn btn-success btn-sm">
+                          <i class="material-icons">edit</i>
+                        </button>
 
-                          <a href="<%= post_path(post.id) %>" class="btn btn-danger btn-sm" data-method="delete" rel="nofollow">
-                            <i class="material-icons">delete</i>
-                          </a>
-                        </td>
-                      </tr>
+                        <a href="<%= post_path(post.id) %>" class="btn btn-danger btn-sm" data-method="delete" rel="nofollow">
+                          <i class="material-icons">delete</i>
+                        </a>
+                      </td>
+                    </tr>
                   <% end %>
                   </tbody>
                 </table>
 
-                <% if @post_count < 1%>
+                <% if @post_count < 1 %>
                   <h4 class="text-center text-danger" style="margin-top: 30px;">No data available</h4>
+                  <!--<a href="<%= new_post_path %>" class="btn btn-primary btn-sm">Create new opening</a>-->
                 <% end %>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
         </div>
       </div>
     </div>

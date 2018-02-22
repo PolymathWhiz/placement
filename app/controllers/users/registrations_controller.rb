@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   layout 'devise'
+  layout 'application', only: [:edit]
   before_action :non_user
   
   # before_action :configure_sign_up_params, only: [:create]
